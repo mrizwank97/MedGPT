@@ -1,0 +1,8 @@
+fastapi
+fastapi-cli
+ollama
+pydantic
+groq
+pytest
+httpx
+requests
