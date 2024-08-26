@@ -50,8 +50,8 @@ jobs:
       - name: Build and Push Docker image
         run: |
           cd fastapi
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/MedGPT_API:${{ github.sha }} .
-          docker push ${{ secrets.DOCKER_USERNAME }}/MedGPT_API:${{ github.sha }}
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/medgpt_api:${{ github.sha }} .
+          docker push ${{ secrets.DOCKER_USERNAME }}/medgpt_api:${{ github.sha }}
           cd ../ollama
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/MedGPT_Ollama:${{ github.sha }} .
-          docker push ${{ secrets.DOCKER_USERNAME }}/MedGPT_Ollama:${{ github.sha }}
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/medgpt_ollama:${{ github.sha }} .
+          docker push ${{ secrets.DOCKER_USERNAME }}/medgpt_ollama:${{ github.sha }}
