@@ -49,7 +49,7 @@ jobs:
 
       - name: Build and Push Docker image
         run: |
-          cd fastapi
+          cd app
           docker build -t ${{ secrets.DOCKER_USERNAME }}/medgpt_api:${{ github.sha }} .
           docker push ${{ secrets.DOCKER_USERNAME }}/medgpt_api:${{ github.sha }}
     
