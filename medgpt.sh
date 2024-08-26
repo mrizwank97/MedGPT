@@ -16,7 +16,9 @@ down() {
 }
 
 test(){
-    docker compose -f docker-compose-test.yml run --rm web
+    echo "Using IMAGE_TAG: $IMAGE_TAG"
+    export IMAGE_TAG
+    docker compose -f docker-compose-test.yml run --rm web --build
     echo $?  
 }
 
