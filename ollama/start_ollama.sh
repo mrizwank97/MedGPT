@@ -5,7 +5,8 @@ pid=$!
 sleep 5
 
 
-echo "Pulling llama3 model"
-ollama pull qwen2:0.5b
+echo "Pulling MedGPT"
+#ollama pull qwen2:0.5b
+ollama pull mrizwank97/medgpt:latest
 
 wait $pid

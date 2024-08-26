@@ -24,7 +24,7 @@ case "$1" in
         down
         ;;
     *)
-        echo "Usage: $0 {up|down}"
+        echo "Usage: $0 {up|down|test}"
         exit 1
         ;;
 esac

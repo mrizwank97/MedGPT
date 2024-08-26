@@ -1,13 +1,6 @@
 version: "3"
 
 services:
-  web:
-#    build: fastapi
-    image: mrizwank97/medgpt_api:${IMAGE_TAG}
-    ports:
-      - 8000:8000
-    volumes:
-      - ./fastapi:/app
   ollama:
 #    build: ollama
     image: mrizwank97/medgpt_ollama:${IMAGE_TAG}
@@ -16,3 +9,14 @@ services:
     volumes:
        - ./ollama:/ollama
     entrypoint: ["/usr/bin/bash", "/start_ollama.sh"]
+
+  web:
+#    build: fastapi
+    image: mrizwank97/medgpt_api:${IMAGE_TAG}
+    ports:
+      - 8000:8000
+    volumes:
+      - ./fastapi:/app
+    entrypoint: ["pytest", "test.py"]
+    depends_on:
+      - ollama
