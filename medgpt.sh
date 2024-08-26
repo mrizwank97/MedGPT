@@ -15,6 +15,11 @@ down() {
     docker compose down
 }
 
+test(){
+    docker compose -f docker-compose-test.yml run --rm web
+    echo $?  
+}
+
 # Parse the command argument
 case "$1" in
     up)
@@ -23,8 +28,12 @@ case "$1" in
     down)
         down
         ;;
+    test)
+        test
+        ;;
     *)
         echo "Usage: $0 {up|down|test}"
         exit 1
         ;;
 esac
+

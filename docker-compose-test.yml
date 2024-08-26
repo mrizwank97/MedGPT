@@ -16,6 +16,7 @@ services:
       - 8000:8000
     volumes:
       - ./app:/app
-    entrypoint: ["sleep", "infinity"]
+      - ./test:/test
+    entrypoint: ["/bin/bash", "-c", "cd .. && pytest test/test.py"]
     depends_on:
       - ollama

@@ -1,6 +1,6 @@
 import requests
 from typing import Union
-from fastapi import FastAPI, Response
+from app import FastAPI, Response
 
 app = FastAPI()
 
@@ -26,7 +26,7 @@ def ask(
         json={
             "prompt": prompt,
             "stream": False,
-            "model": "qwent2:0.5b",
+            "model": "qwen2:0.5b",
             "options": options,
         },
     )

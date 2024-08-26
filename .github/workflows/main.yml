@@ -75,3 +75,19 @@ jobs:
           cd ollama
           docker build -t ${{ secrets.DOCKER_USERNAME }}/medgpt_ollama:${{ github.sha }} .
           docker push ${{ secrets.DOCKER_USERNAME }}/medgpt_ollama:${{ github.sha }}
+
+  unit_test:
+    name: Build MedGPT Ollama Image
+    runs-on: ubuntu-latest
+    needs: [medgpt_api, medgpt_ollama]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Run MedGPT Tests
+        run: |
+          export IMAGE_TAG=${{ github.sha }}
+          docker compose -f docker-compose-test.yml run --rm web
