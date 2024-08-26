@@ -1,6 +1,6 @@
 import requests
 from typing import Union
-from app import FastAPI, Response
+from fastapi import FastAPI, Response
 
 app = FastAPI()
 
