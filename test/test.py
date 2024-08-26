@@ -1,9 +1,9 @@
 from fastapi.testclient import TestClient
 from app.app import app
 import os
-import pytest
 
 client = TestClient(app)
+
 
 def test_ask():
     print(os.getcwd())
