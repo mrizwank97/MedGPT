@@ -2,7 +2,6 @@ version: "3"
 
 services:
   ollama:
-#    build: ollama
     image: mrizwank97/medgpt_ollama:${IMAGE_TAG}
     ports:
       - 11434:11434
@@ -11,7 +10,6 @@ services:
     entrypoint: ["/usr/bin/bash", "/start_ollama.sh"]
 
   web:
-#    build: fastapi
     image: mrizwank97/medgpt_api:${IMAGE_TAG}
     ports:
       - 8000:8000

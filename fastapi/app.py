@@ -26,7 +26,7 @@ def ask(
         json={
             "prompt": prompt,
             "stream": False,
-            "model": "qwen2:0.5b",
+            "model": "qwent2:0.5b",
             "options": options,
         },
     )
