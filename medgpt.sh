@@ -7,7 +7,7 @@ IMAGE_TAG=$(git rev-parse HEAD)
 up() {
     echo "Using IMAGE_TAG: $IMAGE_TAG"
     export IMAGE_TAG
-    docker compose up -d
+    docker compose up -d --build
 }
 
 # Function to bring down Docker Compose
