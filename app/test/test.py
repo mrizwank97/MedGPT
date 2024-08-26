@@ -4,6 +4,7 @@ import os
 
 client = TestClient(app)
 
+
 def test_ask():
     print(os.getcwd())
     prompt = "What is capital of France?"
