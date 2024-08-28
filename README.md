@@ -16,7 +16,7 @@ The MedGPT project focuses on developing and fine-tuning a language model specia
 ### Step 2:
 - Clone the repository:
   ```bash
-  git clone https://github.com/yourusername/medgpt.git
+  git clone https://github.com/mrizwank97/MedGPT.git
   cd medgpt
 
 ### Step 3:
