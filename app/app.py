@@ -22,10 +22,11 @@ def ask(
     if max_tokens is not None:
         options["num_predict"] = max_tokens
 
+    prefix_text = (
+        "Below is an instruction that describes a task. Write a response that "
+        "appropriately completes the request.\n\n"
+    )
     
-    prefix_text = 'Below is an instruction that describes a task. Write a response that ' \
-               'appropriately completes the request.\n\n'
-
     text = f"""<start_of_turn>user {prefix_text} {prompt} <end_of_turn>\n<start_of_turn>model"""
 
     res = requests.post(
