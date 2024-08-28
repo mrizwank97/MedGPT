@@ -11,3 +11,4 @@ weave
 groq
 python-dotenv
 PyYAML
+pandas
