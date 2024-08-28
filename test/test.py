@@ -12,7 +12,6 @@ def test_ask_with_gemma():
     response = client.get(
         "/ask", params={"model": model_name, "prompt": input1 + input2}
     )
-    print(response.json())
     assert "response" in response.json()
     assert response.status_code == 200
 
