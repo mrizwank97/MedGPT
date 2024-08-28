@@ -8,7 +8,6 @@ services:
     volumes:
        - ./ollama:/ollama
     entrypoint: ["/usr/bin/bash", "/start_ollama.sh"]
-
   web:
     image: mrizwank97/medgpt_api:${IMAGE_TAG}
     ports:

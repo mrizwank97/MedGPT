@@ -7,3 +7,7 @@ pytest
 httpx
 requests
 pytest-rerunfailures
+weave
+groq
+python-dotenv
+PyYAML

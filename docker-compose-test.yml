@@ -14,8 +14,6 @@ services:
       timeout: 10s
       retries: 3
       start_period: 10s
-
-
   web:
     image: mrizwank97/medgpt_api:${IMAGE_TAG}
     ports:

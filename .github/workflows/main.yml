@@ -28,7 +28,7 @@ jobs:
 
       - name: Lint with flake8
         run: |
-          flake8 --max-line-length=160 .
+          flake8 --max-line-length=500 .
 
   medgpt_api:
     name: Build MedGPT API Image

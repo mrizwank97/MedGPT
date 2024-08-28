@@ -1,0 +1,52 @@
+###################
+# general configs #
+###################
+entity: 'erasmus-bdma'
+project_name: 'Evaluator_bot'
+
+judges:
+  correctness_judge:  
+    llms:  
+      - model_name: "mixtral-8x7b-32768"
+        temperature: 0
+        chat_stream: False
+        chat_max_tokens: 8192
+        chat_top_p: 1
+        json_format: True
+
+relevance_prompt: |
+  Please act as an impartial judge and evaluate the quality of the provided answer which attempts to answer the provided question based on a provided context.
+
+  Below is your grading rubric: 
+
+  - Correctness: The response has two tags <analysis> and <answer>. if <answer> or <analysis> is missing assign a score of 0.
+  - score 1: The <answer> is incorrect, irrelevant, or does not align with the ground truth.
+  - score 2: The <answer> partially matches the ground truth but includes significant errors, omissions, or irrelevant information.
+  - score 3: The <answer> generally aligns with the ground truth but may lack detail, clarity, or have minor inaccuracies.
+  - score 4: The <answer> is mostly accurate and aligns well with the ground truth, with only minor issues or missing details.
+  - score 5: The <answer> is fully accurate, aligns completely with the ground truth, and is clear and detailed. 
+
+  Output ONLY in the following JSON format, with the explanation field as AT MOST five bullet points:
+  {{
+    "score":,
+    "explanation":""
+  }}
+
+  for example:
+  {{
+    "score":3,
+    "explanations":["the answers are almost identical", "the answer is missing one critical aspect", "the answer is mostly correct"]
+  }}
+
+  user:
+  The two objects to compare are "answer" and "ground_truth" below, as respectively delimited by the triple backquotes:
+
+  answer:
+  ```
+  {answer}
+  ```
+
+  ground_truth:
+  ```
+  {ground_truth}
+  ```
