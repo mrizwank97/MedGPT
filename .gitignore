@@ -2,6 +2,7 @@
 *.cache
 
 # Ignore .DS_Store files
+*.DS_Store
 .DS_Store
 # Ignore __pycache__ directory
 __pycache__
