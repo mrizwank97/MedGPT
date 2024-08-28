@@ -13,7 +13,10 @@ def home():
 
 @app.get("/ask")
 def ask(
-    prompt: str, seed: Union[int, None] = None, max_tokens: Union[int, None] = None
+    model: str,
+    prompt: str,
+    seed: Union[int, None] = None,
+    max_tokens: Union[int, None] = None,
 ):
     options = {}
     if seed is not None:
@@ -31,7 +34,7 @@ def ask(
         json={
             "prompt": text,
             "stream": False,
-            "model": "qwen2:0.5b",
+            "model": model,
             "options": options,
         },
     )
