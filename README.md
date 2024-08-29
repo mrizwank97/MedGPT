@@ -133,9 +133,10 @@ Endpoint:
 -	Method: POST
 -	Description: This endpoint receives a medical case description along with multiple-choice options (a, b, c, d) for diagnosis. The fine-tuned model (Gemma 2, deployed on Ollama) then provides an analysis and predicts the most appropriate diagnosis.
 ## API Demonstration
-- Lets test one medical case:
+- Lets test one medical case below
 ```bash
 Q:A 45-year-old man comes to the physician for the evaluation of difficulty swallowing that has worsened over the past year. He also reports some hoarseness and generalized bone, muscle, and joint pain. During the past six months, he has had progressive constipation and two episodes of kidney stones. He also reports recurrent episodes of throbbing headaches, diaphoresis, and palpitations. He does not smoke or drink alcohol. He takes no medications. His vital signs are within normal limits. Physical examination and an ECG show no abnormalities. Laboratory studies show calcium concentration of 12 mg/dL, phosphorus concentration of 2 mg/dL, alkaline phosphatase concentration of 100 U/L, and calcitonin concentration of 11 pg/mL (N < 8.8). Ultrasonography of the neck shows hypoechoic thyroid lesions with irregular margins and microcalcifications. Which of the following is the most likely underlying cause of this patient's condition??  {'A': 'Mutated NF1 gene', 'B': 'Exposure to ionizing radiation', 'C': 'Deleted VHL gene', 'D': 'Altered RET proto-oncogene expression', 'E': 'Disrupted menin protein function'}
 ```
+- if you look at the output, the model correctly predicted D option. It can be verified from ```bash app/dataset/test_data_gemma.csv```. This is the first row of from the csv file. 
 ![Alt text](images/fastapi1.png)
 ![Alt text](images/fastapi2.png)
